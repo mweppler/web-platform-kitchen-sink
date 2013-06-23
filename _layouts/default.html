@@ -36,7 +36,7 @@
       {% for nav_item in site.navigation-header %}
         {% assign current = nil %}
         {% if page.url == nav_item.href %} {% assign current = 'active' %} {% endif %}
-        <a class="extra {% unless current.nil? %} {{ current }} {% endunless %}" href="{{ nav_item.href }}">{{ nav_item.link }}</a>
+        <a class="extra {% unless current.nil? %} {{ current }} {% endunless %}" href="{{ nav_item.href }}" {% unless nav_item.local %} target="_blank" {% endunless %}>{{ nav_item.link }}</a>
       {% endfor %}
     </div>
 
@@ -46,14 +46,14 @@
       <div class="contact">
         <p>
           He's just a regular guy...<br />
-          <a href="http://matt.weppler.me/">Matt Weppler</a><br />
+          <a href="http://matt.weppler.me/" target="_blank">Matt Weppler</a><br />
           <a href="mailto:mweppler@gmail.com">mweppler@gmail.com</a><br />
         </p>
       </div>
       <div class="contact">
         <p>
-          <a href="http://github.com/mweppler/">github.com/mweppler</a><br />
-          <a href="http://twitter.com/mattweppler/">twitter.com/mattweppler</a><br />
+          <a href="http://github.com/mweppler/" target="_blank">github.com/mweppler</a><br />
+          <a href="http://twitter.com/mattweppler/" target="_blank">twitter.com/mattweppler</a><br />
         </p>
       </div>
       <div class="contact">
@@ -66,7 +66,7 @@
     </div>
   </div>
 
-  <a href="http://github.com/mweppler"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub" /></a>
+  <a href="https://github.com/mweppler/kitchen-sink" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub" /></a>
 
   {% comment %}
     {% raw %}
