@@ -1,0 +1,18 @@
+---
+layout: default
+meta-description: |
+meta-keywords: |
+title: WebSocket
+---
+<script>
+  // Create a new WebSocket object
+  var socket = new WebSocket("ws://localhost:4300/");
+  // Send an initial message to the server
+  socket.onopen = function() {
+    socket.send("Hello localhost!");
+  }
+  // Listen for any data sent to us by the server
+  socket.onmessage = function(msg) {
+    alert("Localhost says: " + msg);
+  }
+</script>

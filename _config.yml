@@ -1,0 +1,42 @@
+# Jekyll config stuff
+source:    .
+pygments:  true
+lsi:       false
+#permalink: pretty
+exclude:   [config.rb, Gemfile, Gemfile.lock, Guardfile, Rakefile, README.md]
+
+# Site content
+javascripts:
+  - name: live-reload
+    script: |
+      <script>document.write('<script src="//' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+  - name: require-js
+    script: |
+      <script data-main="/javascripts/application" src="/javascripts/libs/require.js"></script>
+  #- name: require-js-min
+    #script: |
+      #<script data-main="/javascripts/application.min" src="/javascripts/libs/require.min.js"></script>
+  - name: jquery-1.9.1-cdn
+    script: |
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  - name: jquery-1.9.1
+    script: |
+      <script>window.jQuery || document.write('<script src="/javascripts/libs/jquery-1.9.1.min.js"><\/script>')</script>
+
+stylesheets:
+  - name: normalize
+    stylesheet: |
+      <link rel="stylesheet" href="/stylesheets/normalize.min.css" />
+  - name: application
+    stylesheet: |
+      <link rel="stylesheet" href="/stylesheets/application.css" />
+
+navigation-header:
+  - link: home
+    href: /index.html
+    local: true
+
+navigation-footer:
+  - link: home
+    href: /index.html
+    local: true

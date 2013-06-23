@@ -1,0 +1,16 @@
+/* */
+@mixin nav-gradient($stop_1, $stop_2, $stop_3) {
+  /***  CSS Gradient  ***/
+  /*  Chrome 1-9 and Safari 4-5.0  */
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.0, $stop_1), color-stop(0.800, $stop_2), color-stop(1.0, $stop_3));
+  /*  Chrome 10+ Safari 5.1+ Mobile Safari  */
+  background-image: -webkit-linear-gradient(top, $stop_1, $stop_2 80.0%, $stop_3);
+  /*  Firefox 3.6+  */
+  background-image: -moz-linear-gradient(top, $stop_1, $stop_2 80.0%, $stop_3);
+  /*  IE 10+  */
+  background-image: -ms-linear-gradient(top, $stop_1, $stop_2 80.0%, $stop_3);
+  /*  Opera 11.10+  */
+  background-image: -o-linear-gradient(top, $stop_1, $stop_2 80.0%, $stop_3);
+  /*  W3C  */
+  background-image: linear-gradient(top, $stop_1, $stop_2 80.0%, $stop_3);
+}

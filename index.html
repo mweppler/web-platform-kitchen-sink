@@ -1,0 +1,33 @@
+---
+layout: default
+meta-description: |
+meta-keywords: |
+title: You can relax now, you're home
+---
+<div id="">
+  <h1>Stuff to try</h1>
+  <ul>
+    <li><a href="animations.html">Animations</a></li>
+    <li><a href="animation-project.html">Animation Project</a></li>
+    <li><a href="audio.html">Audio</a></li>
+    <li><a href="canvas.html">Canvas</a></li>
+    <li><a href="html5-form-inputs.html">HTML5 Form Inputs</a></li>
+    <li><a href="gradient.html">Gradient</a></li>
+    <li><a href="multi-columns.html">Multi-columns</a></li>
+    <li><a href="rwd-basic.html">RWD Basic</a></li>
+    <li><a href="transforms.html">Transforms</a></li>
+    <li><a href="transitions.html">Transitions</a></li>
+    <li><a href="typography.html">Typography</a></li>
+    <li><a href="websockets.html">Web Sockets</a></li>
+    <li><a href="webstorage.html">Web Storage</a></li>
+  </ul>
+</div>
+
+<div id="">
+  <h1>Posts</h1>
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>

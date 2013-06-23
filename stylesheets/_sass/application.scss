@@ -1,0 +1,12 @@
+/******************************  Generic Styles  *****************************/
+@import "_color-palette.scss";
+@import "_gradients.scss";
+@import "_syntax.scss";
+
+/***************************  Site Specific Styles  **************************/
+@import "_grid.scss";
+@import "_styles.scss";
+
+/****************************  Responsive Styles  ****************************/
+@import "_grid-responsive.scss";
+@import "_media-queries.scss";

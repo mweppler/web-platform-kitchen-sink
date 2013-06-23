@@ -1,0 +1,20 @@
+---
+layout: default
+meta-description: |
+meta-keywords: |
+title: Audio
+---
+<audio controls id="myaudio">
+  <source src="assets/audio/scifi011.mp3" />
+</audio>
+
+<script>
+  var audio = document.getElementById("myaudio");
+  document.onkeydown = function(e) {
+    if (e.keyCode == 83) {
+      audio.pause(); // Key pressed was s
+    } else if (e.keyCode == 80) {
+      audio.play(); //Key pressed was p
+    }
+  }
+</script>

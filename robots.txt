@@ -1,0 +1,12 @@
+# This is the sitemap for matt wepplers kitchen-sink
+#
+# Updated 23 June 2013
+#
+# For more information on SHIELD
+# Visit http://kitchen-sink.weppler.me/
+
+User-agent: *
+Disallow:
+
+Sitemap: http://kitchen-sink.weppler.me/sitemap.xml
+
