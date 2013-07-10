@@ -6,8 +6,8 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1" />
-  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width" />
-  <!--<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no width=device-width" />-->
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no width=device-width" />
+  <!--<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width" />-->
   <!--<meta name="apple-mobile-web-app-capable" content="yes"/>-->
   <meta name="description" content="{{ page.meta-description }}">
   <meta name="keywords" content="{{ page.meta-keywords }}">
@@ -21,63 +21,73 @@
   {% endfor %}
 
   <script src="/javascripts/libs/modernizr.min.js"></script>
+
+  {% if page.qunit-testing %}
+    <link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.12.0.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="http://code.jquery.com/qunit/qunit-1.12.0.js"></script>
+  {% endif %}
+
 </head>
 <body>
 
-  <noscript>
-    For full functionality of this site it is necessary to enable JavaScript.
-    Here are the <a href="http://www.enable-javascript.com/" target="_blank">
-    instructions how to enable JavaScript in your web browser</a>.
-  </noscript>
-
-  <div class="header site">
-    <div class="title">
-      <a href="/">Kitchen Sink</a>
-      {% for nav_item in site.navigation-header %}
-        {% assign current = nil %}
-        {% if page.url == nav_item.href %} {% assign current = 'active' %} {% endif %}
-        <a class="extra {% unless current.nil? %} {{ current }} {% endunless %}" href="{{ nav_item.href }}" {% unless nav_item.local %} target="_blank" {% endunless %}>{{ nav_item.link }}</a>
-      {% endfor %}
-    </div>
-
+  {% if page.blank-page %}
     {{ content }}
+  {% else %}
+    <noscript>
+      For full functionality of this site it is necessary to enable JavaScript.
+      Here are the <a href="http://www.enable-javascript.com/" target="_blank">
+      instructions how to enable JavaScript in your web browser</a>.
+    </noscript>
 
-    <div class="footer">
-      <div class="contact">
-        <p>
-          He's just a regular guy...<br />
-          <a href="http://matt.weppler.me/" target="_blank">Matt Weppler</a><br />
-          <a href="mailto:mweppler@gmail.com">mweppler@gmail.com</a><br />
-        </p>
+    <div class="header site">
+      <div class="title">
+        <a href="/">Kitchen Sink</a>
+        {% for nav_item in site.navigation-header %}
+          {% assign current = nil %}
+          {% if page.url == nav_item.href %} {% assign current = 'active' %} {% endif %}
+          <a class="extra {% unless current.nil? %} {{ current }} {% endunless %}" href="{{ nav_item.href }}" {% unless nav_item.local %} target="_blank" {% endunless %}>{{ nav_item.link }}</a>
+        {% endfor %}
       </div>
-      <div class="contact">
-        <p>
-          <a href="http://github.com/mweppler/" target="_blank">github.com/mweppler</a><br />
-          <a href="http://twitter.com/mattweppler/" target="_blank">twitter.com/mattweppler</a><br />
-        </p>
-      </div>
-      <div class="contact">
-        <p>
-          {% for nav_item in site.navigation-footer %}
-            <a href="{{ nav_item.href }}" {% unless nav_item.local %} target="_blank" {% endunless %} >{{ nav_item.link }}</a>{% unless forloop.last %} | {% endunless %}
-          {% endfor %}
-        </p>
+
+      {{ content }}
+
+      <div class="footer">
+        <div class="contact">
+          <p>
+            He's just a regular guy...<br />
+            <a href="http://matt.weppler.me/" target="_blank">Matt Weppler</a><br />
+            <a href="mailto:mweppler@gmail.com">mweppler@gmail.com</a><br />
+          </p>
+        </div>
+        <div class="contact">
+          <p>
+            <a href="http://github.com/mweppler/" target="_blank">github.com/mweppler</a><br />
+            <a href="http://twitter.com/mattweppler/" target="_blank">twitter.com/mattweppler</a><br />
+          </p>
+        </div>
+        <div class="contact">
+          <p>
+            {% for nav_item in site.navigation-footer %}
+              <a href="{{ nav_item.href }}" {% unless nav_item.local %} target="_blank" {% endunless %} >{{ nav_item.link }}</a>{% unless forloop.last %} | {% endunless %}
+            {% endfor %}
+          </p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <a href="https://github.com/mweppler/kitchen-sink" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub" /></a>
+    <a href="https://github.com/mweppler/kitchen-sink" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub" /></a>
 
-  {% comment %}
-    {% raw %}
-      <script id="my-template" type="text/x-handlebars-template">
-      </script>
-    {% endraw %}
-  {% endcomment %}
+    {% comment %}
+      {% raw %}
+        <script id="my-template" type="text/x-handlebars-template">
+        </script>
+      {% endraw %}
+    {% endcomment %}
 
-  {% for script in site.javascripts %}
-    {{ script.script }}
-  {% endfor %}
+    {% for script in site.javascripts %}
+      {{ script.script }}
+    {% endfor %}
 
+  {% endif %}
 </body>
 </html>

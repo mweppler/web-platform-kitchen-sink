@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'classifier', '~> 1.3' # jekyll dependency
-gem 'compass', '0.12.2'
+gem 'compass', '~> 0.12'
 gem 'directory_watcher', '~> 1.4.1' # jekyll dependency
 gem 'guard', '1.7.0'
 gem 'guard-coffeescript'
