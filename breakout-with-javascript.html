@@ -1,0 +1,27 @@
+---
+blank-page: true
+layout: default
+meta-description: |
+meta-keywords: |
+qunit-testing: false
+qunit-testing-on: false
+title: BreakOut with JavaScript
+---
+<style>
+  #canvas { display: block; }
+  #start-button { background-color: #76b900; border: none; border-radius: 3px; color: #fff; display: block; font-size: 175%; height: 40px; letter-spacing: .2em; margin: 5px 0; padding: 0; width: 100%; }
+  #start-button.disabled { visibility: hidden; }
+</style>
+<canvas id="canvas"></canvas>
+<button id="start-button" class="">Start</button>
+<script src="/javascripts/breakout-with-javascript.js"></script>
+
+{% if page.qunit-testing-on %}
+  <h1 id="qunit-header">QUnit Test Suite</h1>
+  <h2 id="qunit-banner"></h2>
+  <div id="qunit-testrunner-toolbar"></div>
+  <h2 id="qunit-userAgent"></h2>
+  <ol id="qunit-tests"></ol>
+
+  <script src="/javascripts/qunit-examples.js"></script>
+{% endif %}
