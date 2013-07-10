@@ -12,9 +12,9 @@
   <meta name="description" content="{{ page.meta-description }}">
   <meta name="keywords" content="{{ page.meta-keywords }}">
 
-  <title>{{ page.title }} | Kitchen Sink</title>
+  <title>{{ page.title }} | Web Platform Kitchen Sink</title>
 
-  <link href="http://kitchen-sink.weppler.me/humans.txt" rel="author" type="text/plain" />
+  <link href="/humans.txt" rel="author" type="text/plain" />
 
   {% for stylesheet in site.stylesheets %}
     {{ stylesheet.stylesheet }}
@@ -41,7 +41,7 @@
 
     <div class="header site">
       <div class="title">
-        <a href="/">Kitchen Sink</a>
+        <a href="/">Web Platform Kitchen Sink</a>
         {% for nav_item in site.navigation-header %}
           {% assign current = nil %}
           {% if page.url == nav_item.href %} {% assign current = 'active' %} {% endif %}
