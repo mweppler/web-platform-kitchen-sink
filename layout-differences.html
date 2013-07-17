@@ -1,0 +1,539 @@
+---
+blank-page: true
+layout: default
+meta-description: |
+meta-keywords: |
+qunit-testing: false
+qunit-testing-on: false
+scripts: false
+styles: false
+title: Layout Differences
+---
+<style>
+  body {
+    background-color: #e0e2ff;
+    color: #000bb2;
+    font-family: Arial, sans-serif;
+    font-size: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  .bluish {
+    color: #000bb2;
+  }
+  .bluish-dark {
+    color: #000666;
+  }
+  .orangish {
+    color: #b28e00;
+  }
+  .orangish-dark {
+    color: #665100;
+  }
+  .upcase {
+    text-transform: uppercase;
+  }
+  .white {
+    color: #fff;
+  }
+
+
+  body.adaptive .grid-1,
+  body.fixed .grid-1 {
+    width: 110px;
+  }
+
+  body.adaptive .grid-2,
+  body.fixed .grid-2 {
+    width: 260px;
+  }
+
+  body.adaptive .grid-3,
+  body.fixed .grid-3 {
+    width: 410px;
+  }
+
+  body.adaptive .grid-4,
+  body.fixed .grid-4 {
+    width: 560px;
+  }
+
+  body.adaptive .grid-5,
+  body.fixed .grid-5 {
+    width: 710px;
+  }
+
+  body.adaptive .grid-6,
+  body.fixed .grid-6 {
+    width: 860px;
+  }
+
+  body.adaptive .grid-7,
+  body.fixed .grid-7 {
+    width: 1010px;
+  }
+
+  body.adaptive .grid-8,
+  body.fixed .grid-8 {
+    width: 1160px;
+  }
+
+  body.adaptive .grid-1,
+  body.adaptive .grid-2,
+  body.adaptive .grid-3,
+  body.adaptive .grid-4,
+  body.adaptive .grid-5,
+  body.adaptive .grid-6,
+  body.adaptive .grid-7,
+  body.adaptive .grid-8,
+  body.fixed .grid-1#,
+  body.fixed .grid-2,
+  body.fixed .grid-3,
+  body.fixed .grid-4,
+  body.fixed .grid-5,
+  body.fixed .grid-6,
+  body.fixed .grid-7,
+  body.fixed .grid-8 {
+    display: block;
+    float: left;
+    margin: 0 40px 10px 0;
+  }
+
+  body.adaptive .grid-container,
+  body.fixed .grid-container,
+  body.fluid .grid-container,
+  body.responsive .grid-container {
+    margin: auto;
+    max-width: 1160px;
+    width: 1160px;
+  }
+
+  body.fluid .grid-1,
+  body.responsive .grid-1 {
+    width: 9.48275862069%;   /*  110px  */
+  }
+
+  body.fluid .grid-2,
+  body.responsive .grid-2 {
+    width: 22.413793103448%; /*  260px  */
+  }
+
+  body.fluid .grid-3,
+  body.responsive .grid-3 {
+    width: 35.344827586207%; /*  410px  */
+  }
+
+  body.fluid .grid-4,
+  body.responsive .grid-4 {
+    width: 48.275862068966%; /*  560px  */
+  }
+
+  body.fluid .grid-5,
+  body.responsive .grid-5 {
+    width: 61.206896551724%; /*  710px  */
+  }
+
+  body.fluid .grid-6,
+  body.responsive .grid-6 {
+    width: 74.137931034483%; /*  860px  */
+  }
+
+  body.fluid .grid-7,
+  body.responsive .grid-7 {
+    width: 87.068965517241%; /*  1010px */
+  }
+
+  body.fluid .grid-8,
+  body.responsive .grid-8 {
+    width: 100%;             /*  1160px */
+  }
+
+  body.fluid .grid-1,
+  body.fluid .grid-2,
+  body.fluid .grid-3,
+  body.fluid .grid-4,
+  body.fluid .grid-5,
+  body.fluid .grid-6,
+  body.fluid .grid-7,
+  body.fluid .grid-8,
+  body.responsive .grid-1,
+  body.responsive .grid-2,
+  body.responsive .grid-3,
+  body.responsive .grid-4,
+  body.responsive .grid-5,
+  body.responsive .grid-6,
+  body.responsive .grid-7,
+  body.responsive .grid-8 {
+    display: block;
+    float: left;
+    margin: 0 3.44% 1% 0;
+  }
+
+  body.fluid .grid-container,
+  body.responsive .grid-container {
+    width: 90%;
+  }
+
+  /* alpha and omega need to follow the grid-x classes */
+  .alpha {
+    margin-left: 0;
+  }
+  .omega {
+    margin-right: 0;
+  }
+
+  body.adaptive .feature,
+  body.fixed .feature {
+    float: left;
+    margin: 12px;
+    text-align: center;
+    width: 360px;
+  }
+
+  body.fluid .feature,
+  body.responsive .feature {
+    float: left;
+    margin: 1%;
+    text-align: center;
+    width: 31%;
+  }
+
+  body.fluid .feature img,
+  body.responsive .feature img {
+    width: 98%;
+  }
+
+  body.fluid .feature p,
+  body.responsive .feature p {
+    margin-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+
+  body.adaptive .feature p sup,
+  body.fixed .feature p sup,
+  body.fluid .feature p sup,
+  body.responsive .feature p sup {
+    font-size: 9px;
+  }
+
+  body.adaptive .specs-table,
+  body.fixed .specs-table,
+  body.fluid .specs-table,
+  body.responsive .specs-table {
+    background: #665100;
+    border-spacing: 0;
+    width: 100%;
+  }
+
+  body.adaptive .specs-table td,
+  body.fixed .specs-table td,
+  body.fluid .specs-table td,
+  body.responsive .specs-table td {
+    border: 1px solid #b2ae9d;
+    padding: 5px;
+    width: 50%;
+  }
+
+  body.fixed .specs-table .category,
+  body.fluid .specs-table .category,
+  body.responsive .specs-table .category {
+    color: #000666;
+  }
+
+  body.adaptive .specs-table .std,
+  body.fixed .specs-table .std,
+  body.fluid .specs-table .std,
+  body.responsive .specs-table .std {
+    background: #b28e00;
+  }
+
+  @media screen and (max-width: 1024px) and (min-width: 641px) {
+    body.adaptive .grid-container {
+      width: 922px;
+    }
+
+    body.adaptive .grid-8 {
+      width: 922px;
+    }
+
+    body.adaptive .feature {
+      width: 424px;
+    }
+
+    body.responsive .feature {
+      width: 46%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    body.adaptive .grid-container {
+      width: 690px;
+    }
+
+    body.adaptive .grid-8 {
+      width: 690px;
+    }
+
+    body.adaptive .feature {
+      width: 318px;
+    }
+
+    body.adaptive .feature img {
+      width: 318px;
+    }
+  }
+
+  @media screen and (max-width: 640px) and (min-width: 320px) {
+    body.adaptive .grid-container {
+      width: 576px;
+    }
+
+    body.adaptive .grid-8 {
+      width: 576px;
+    }
+
+    body.responsive .grid-1,
+    body.responsive .grid-2,
+    body.responsive .grid-3,
+    body.responsive .grid-4,
+    body.responsive .grid-5,
+    body.responsive .grid-6,
+    body.responsive .grid-7,
+    body.responsive .grid-8 {
+      width: 100%;
+    }
+
+    body.adaptive .feature {
+      margin: 0;
+      width: 576px;
+    }
+
+    body.responsive .feature {
+      float: none;
+      margin: 0;
+      width: 100%;
+    }
+
+    body.adaptive .feature img {
+      width: 565px;
+    }
+
+    body.responsive .feature p {
+      font-size: 1.1em;
+      height: auto;
+      margin-bottom: 50px;
+    }
+
+    body.responsive .feature.first {
+      margin-top: 25px;
+    }
+
+    body.responsive .feature.last p {
+      margin-bottom: 0;
+    }
+
+    body.responsive .specs-table td {
+      float: left;
+      width: 100%;
+    }
+
+    body.responsive .specs-table td.category {
+      background: #665100;
+    }
+
+    body.responsive .specs-table td.specification {
+      background: #b28e00;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    body.adaptive .grid-container {
+      width: 288px;
+    }
+
+    body.adaptive .grid-8 {
+      width: 288px;
+    }
+
+    body.adaptive .feature {
+      margin: 0;
+      width: 288px;
+    }
+
+    body.adaptive .feature img {
+      width: 282px;
+    }
+
+    body.adaptive .specs-table td {
+      float: left;
+      width: 100%;
+    }
+
+    body.adaptive .specs-table td.category {
+      background: #665100;
+    }
+
+    body.adaptive .specs-table td.specification {
+      background: #b28e00;
+    }
+  }
+</style>
+<div class="grid-container">
+  <div class="grid-8">
+    <h1 class="bluish-dark upcase">Lorem Ipsum</h1>
+    <!--  -->
+    <div class="feature first">
+      <img src="http://fpoimg.com/360x202?text=Lorem Ipsum" />
+      <p>
+        <span class="upcase bluish-dark">Lorem Ipsum</span><br />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In risus est, rhoncus ac leo et.<br />
+      </p>
+    </div>
+
+    <div class="feature">
+      <img src="http://fpoimg.com/360x202?text=Nam Ornare" />
+      <p>
+        <span class="upcase bluish-dark">Nam Ornare</span><br />
+        Nam ornare aliquam quam. Nulla fringilla sed metus ac vestibulum. Blandit feugiat lacus a.<br />
+      </p>
+    </div>
+
+    <div class="feature">
+      <img src="http://fpoimg.com/360x202?text=Nullam Et Massa" />
+      <p>
+        <span class="upcase bluish-dark">Nullam Et Massa</span><br />
+        Nullam et massa convallis, condimentum ante a, auctor purus. Fringilla condimentum libero.<br />
+      </p>
+    </div>
+
+    <div class="feature">
+      <img src="http://fpoimg.com/360x202?text=Praesent Non" />
+      <p>
+        <span class="upcase bluish-dark">Praesent Non</span><br />
+        Praesent non congue justo. Aliquam vitae eros vitae lectus elementum tincidunt id non nisi.<br />
+      </p>
+    </div>
+
+    <div class="feature">
+      <img src="http://fpoimg.com/360x202?text=Donec Ullamcorper" />
+      <p>
+        <span class="upcase bluish-dark">Donec Ullamcorper</span><br />
+        Donec ullamcorper ultricies ultricies. Mauris id quam quis leo vehicula congue. Nam est urna.<br />
+      </p>
+    </div>
+
+    <div class="feature last">
+      <img src="http://fpoimg.com/360x202?text=Vivamus At Erat" />
+      <p>
+        <span class="upcase bluish-dark">Vivamus At Erat</span><br />
+        Vivamus at erat malesuada est tincidunt pharetra. Quisque non leo ipsum. In hac habitasse platea dictumst.<br />
+      </p>
+    </div>
+  </div>
+  <div class="grid-8">
+    <h2 class="bluish-dark upcase">Maecenas mollis</h2>
+    <table class="specs-table">
+      <tr>
+        <td class="category std">Pellentesque</td>
+        <td class="specification std">Pellentesque ut velit lectus</td>
+      </tr>
+
+      <tr>
+        <td class="category alt">Vestibulum</td>
+        <td class="specification alt">Vestibulum dapibus metus sit amet magna accumsan eleifend</td>
+      </tr>
+
+      <tr>
+        <td class="category std">Ut elit nisi</td>
+        <td class="specification std">Ut elit nisi, condimentum at bibendum eget, posuere ac elit</td>
+      </tr>
+
+      <tr>
+        <td class="category alt">Nulla porttitor</td>
+        <td class="specification alt">Nulla porttitor vel dolor molestie lacinia</td>
+      </tr>
+
+      <tr>
+        <td class="category std">Donec</td>
+        <td class="specification std">Donec sollicitudin est dui</td>
+      </tr>
+
+      <tr>
+        <td class="category alt">Donec ac risus</td>
+        <td class="specification alt">
+          Donec ac risus placerat<br />
+          Commodo orci a, dictum tortor<br />
+          Sed ut porta eros<br />
+          Aenean sit amet quam est
+        </td>
+      </tr>
+
+      <tr>
+        <td class="category std">Ut elit nisi</td>
+        <td class="specification std">
+          Ut elit nisi<br />
+          Condimentum at bibendum eget<br />
+          Posuere ac elit<br />
+          Vivamus tellus augue
+        </td>
+      </tr>
+
+      <tr>
+        <td class="category alt">Nulla porttitor vel</td>
+        <td class="specification alt">
+          Fusce sodales mauris non felis posuere interdum<br />
+          In nec quam arcu
+        </td>
+      </tr>
+      <tr>
+        <td class="category std">Pellentesque hendrerit</td>
+        <td class="specification std">
+          Pellentesque hendrerit convallis lacus<br />
+          Nunc tristique facilisis sapien<br />
+          Quis pharetra tortor convallis vitae
+        </td>
+      </tr>
+
+      <tr>
+        <td class="category alt">Sed quis luctus</td>
+        <td class="specification alt">
+          Sed quis luctus libero<br />
+          Sed laoreet ligula non felis aliquet<br />
+          In tristique tortor sollicitudin
+      </tr>
+
+      <tr>
+        <td class="category std">Donec sollicitudin</td>
+        <td class="specification std">
+          Donec sollicitudin est dui<br />
+          Vel semper purus ultricies id<br />
+          Mauris ut aliquam felis<br />
+          Nunc commodo pretium nisl
+        </td>
+      </tr>
+
+    </table>
+  </div>
+</div>
+
+<script>
+  var layout = null,
+      layoutRegex = /\?layout=(.*)/,
+      layouts = ['adaptive', 'fixed', 'fluid', 'responsive'];
+
+  function switchLayout(layout) {
+    layouts.forEach(function (element, index, array) {
+      document.body.classList.remove(element);
+    });
+    document.body.classList.add(layout)
+  }
+  layout = layoutRegex.exec(location.search)
+  if (layout !== null && layout[1] !== undefined) {
+    switchLayout(layout[1]);
+  }
+</script>
+

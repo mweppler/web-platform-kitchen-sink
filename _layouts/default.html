@@ -16,11 +16,15 @@
 
   <link href="/humans.txt" rel="author" type="text/plain" />
 
-  {% for stylesheet in site.stylesheets %}
-    {{ stylesheet.stylesheet }}
-  {% endfor %}
+  {% if page.styles %}
+    {% for stylesheet in site.stylesheets %}
+      {{ stylesheet.stylesheet }}
+    {% endfor %}
+  {% endif %}
 
-  <script src="/javascripts/libs/modernizr.min.js"></script>
+  {% if page.scripts %}
+    <script src="/javascripts/libs/modernizr.min.js"></script>
+  {% endif %}
 
   {% if page.qunit-testing %}
     <link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.12.0.css" type="text/css" media="screen" />
@@ -84,9 +88,11 @@
       {% endraw %}
     {% endcomment %}
 
-    {% for script in site.javascripts %}
-      {{ script.script }}
-    {% endfor %}
+    {% if page.scripts %}
+      {% for script in site.javascripts %}
+        {{ script.script }}
+      {% endfor %}
+    {% endif %}
 
   {% endif %}
 </body>
