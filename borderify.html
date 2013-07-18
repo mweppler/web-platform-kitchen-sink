@@ -1,0 +1,29 @@
+---
+layout: default
+meta-description: |
+meta-keywords: |
+scripts: true
+styles: true
+title: Bookmarklet: Borderify
+---
+{% highlight javascript %}
+  javascript: (function (document, undefined) {
+    var elements = document.getElementsByTagName('*');
+    var _i = 0;
+    for (; _i < elements.length; _i++) {
+      elements[_i].style.border = '1px solid red';
+      elements[_i].title = elements[_i].tagName + ' -  id: ' + elements[_i].id + ' - classList: ' + elements[_i].classList;
+    }
+  })(window.document);
+{% endhighlight %}
+
+<p>Minified Version:</p>
+
+{% highlight javascript %}
+  javascript:(function(){javascript:(function(c,d){for(var b=c.getElementsByTagName("*"),a=0;a<b.length;a++)b[a].style.border="1px solid red",b[a].title=b[a].tagName+" -  id: "+b[a].id+" - classList: "+b[a].classList})(window.document);})();
+{% endhighlight %}
+
+<hr />
+<p>Drag me to your bookmark bar:</p>
+
+<a href="javascript:(function(){javascript:(function(c,d){for(var b=c.getElementsByTagName('*'),a=0;a<b.length;a++)b[a].style.border='1px solid red',b[a].title=b[a].tagName+' -  id: '+b[a].id+' - classList: '+b[a].classList})(window.document);})();">Borderify</a>

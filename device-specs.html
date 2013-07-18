@@ -1,0 +1,54 @@
+---
+layout: default
+meta-description: |
+meta-keywords: |
+scripts: true
+styles: true
+title: Device Specs
+---
+<style>
+</style>
+
+<div>
+  <ul id="spec-list">
+  </ul>
+</div>
+
+<script>
+  (function (document, undefined) {
+    var getDeviceSpecs = function() {
+      var specs = {
+        'window.devicePixelRatio': window.devicePixelRatio,
+        'window.innerHeight': window.innerHeight,
+        'window.innerWidth': window.innerWidth,
+        'window.outerHeight': window.outerHeight,
+        'window.outerWidth': window.outerWidth,
+        'window.screen.colorDepth': window.screen.colorDepth,
+        'window.screen.pixelDepth': window.screen.pixelDepth,
+        'window.screen.availHeight': window.screen.availHeight,
+        'window.screen.availWidth': window.screen.availWidth,
+        'window.screen.height': window.screen.height,
+        'window.screen.width': window.screen.width,
+        'document.body.clientHeight': document.body.clientHeight,
+        'document.body.clientWidth': document.body.clientWidth,
+        'document.documentElement.clientHeight': document.documentElement.clientHeight,
+        'document.documentElement.clientWidth': document.documentElement.clientWidth
+      };
+      var specList = document.getElementById('spec-list');
+      specList.innerHTML = '';
+      for (var key in specs) {
+        var listItem  = document.createElement('li');
+        var specSpan  = document.createElement('span');
+        listItem.appendChild(document.createTextNode(key + ' = '));
+        listItem.appendChild(specSpan.appendChild(document.createTextNode(specs[key])));
+        specList.appendChild(listItem);
+      }
+    }
+
+    window.onresize = function() {
+      getDeviceSpecs();
+    }
+
+    getDeviceSpecs();
+  })(window.document);
+</script>
