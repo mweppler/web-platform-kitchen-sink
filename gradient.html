@@ -6,7 +6,32 @@ scripts: true
 styles: true
 title: Gradients
 ---
+<style>
+  .box {
+    background-color: orange;
+    border-radius: 25px;
+    height: 400px;
+    margin: 60px auto;
+    width: 400px;
+  }
+
+  .linear-gradient {
+    /* horozontal gradient */
+    /* gradient type linear, radial | starting x & y | ending x & y | color from, to */
+    background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, from(orange), to(black));
+    background-image: -moz-linear-gradient(0% 100% 0deg, orange, black);
+    /* vertical gradient */
+    /* background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, from(orange), to(black)); */
+  }
+
+  .radial-gradient {
+    /* gradient type linear, radial | inner circle origin, radius | outer circle origin, radius | color from, to */
+    background-image: -webkit-gradient(radial, center center, 0, center center, 200, from(orange), to(black));
+    background-image: -moz-radial-gradient(center, circle closest-corner, orange 0%, #000 100%);
+  }
+</style>
+
 <div id="wrapper">
-  <div class="box-subject linear-gradient"></div>
-  <div class="box-subject radial-gradient"></div>
+  <div class="box linear-gradient"></div>
+  <div class="box radial-gradient"></div>
 </div>

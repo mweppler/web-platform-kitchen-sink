@@ -6,15 +6,55 @@ scripts: true
 styles: true
 title: Transforms
 ---
+<style>
+  .box-wrapper {
+    -webkit-perspective: 800;
+  }
+
+  .box {
+    background-color: orange;
+    border-radius: 25px;
+    height: 400px;
+    margin: 60px auto;
+    width: 400px;
+  }
+
+  .transform {
+    /*-webkit-transform: translate(25px, 25px);*/
+    /*-webkit-transform: scale(.35, 1.1);*/
+    /*-webkit-transform: rotate(25deg);*/
+    /*-webkit-transform: skew(25deg, 25deg);*/
+    -webkit-transform: translate(25px, 25px) scale(.6, .85) rotate(25deg);
+  }
+
+  .transform-3d {
+    /*-webkit-transform: translate3d(0, 0, 100px);*/
+    /*-webkit-transform: rotate3d(100, 100, 100, 10deg);*/
+    /*-webkit-transform: rotateX(30deg);*/
+    /*-webkit-transform: rotateY(30deg);*/
+    /*-webkit-transform: rotateZ(30deg);*/
+    /*-webkit-transform: scale3d(.8, .8, 4);*/
+    -webkit-transform: scale3d(.8, .8, 1) rotate3d(100, 100, 100, 30deg);
+    -webkit-transition: all 0.3s linear;
+  }
+
+  .transform-3d:hover {
+    -webkit-transform: scale3d(.8, .8, 2) rotate3d(100, 100, 100, 30deg);
+  }
+
+  p { color: blue; font-size: .75em; line-height: 1em; padding: 25px; }
+</style>
+
 <div id="wrapper">
-  <div class="box-subject transform"></div>
+  <div class="box transform"></div>
   <div class="box-wrapper">
-    <div class="box-subject transform-3d">
+    <div class="box transform-3d">
       <p>
         Shankle shank ground round rump meatloaf, tail chicken ribeye short loin. Corned beef ground round capicola salami pork chop. Pork pork belly chuck biltong. Bresaola venison meatloaf, biltong strip steak pork chop ham jerky spare ribs drumstick beef. Bresaola shankle doner, short ribs chuck corned beef tenderloin cow strip steak pork belly kielbasa pork chop frankfurter boudin. Capicola meatball ham hock frankfurter, shankle ribeye pork belly. Tenderloin pork turducken pastrami, kielbasa swine shankle.
       </p>
       <p>
-        Spare ribs pork loin sausage, cow pork ball tip tri-tip pancetta fatback filet mignon short loin. Turkey short ribs shankle beef turducken frankfurter prosciutto jerky corned beef bacon venison brisket leberkas shoulder biltong. Short loin cow ball tip doner turkey. Fatback filet mignon hamburger, spare ribs pastrami biltong sausage sirloin flank boudin strip steak tri-tip shankle brisket ball tip. Fatback sausage jowl meatball pig. Chicken sirloin jowl meatball brisket t-bone turkey spare ribs.      </p>
+        Spare ribs pork loin sausage, cow pork ball tip tri-tip pancetta fatback filet mignon short loin. Turkey short ribs shankle beef turducken frankfurter prosciutto jerky corned beef bacon venison brisket leberkas shoulder biltong. Short loin cow ball tip doner turkey. Fatback filet mignon hamburger, spare ribs pastrami biltong sausage sirloin flank boudin strip steak tri-tip shankle brisket ball tip. Fatback sausage jowl meatball pig. Chicken sirloin jowl meatball brisket t-bone turkey spare ribs.
+      </p>
     </div>
   </div>
 </div>

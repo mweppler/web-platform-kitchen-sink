@@ -6,6 +6,32 @@ scripts: true
 styles: true
 title: Transitions
 ---
+<style>
+  .box {
+    background-color: orange;
+    border-radius: 25px;
+    height: 400px;
+    margin: 60px auto;
+    width: 400px;
+  }
+
+  .transition {
+    -webkit-transition: -webkit-box-shadow 1s linear;
+    -webkit-transition: all 0.5s linear;
+    -webkit-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease-in;
+    -webkit-transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+  }
+
+  .transition:hover {
+    background: yellow;
+    -webkit-border-radius: 5px;
+    -webkit-box-shadow: 0 0 30px black;
+  }
+</style>
+
 <div id="wrapper">
-  <div class="box-subject transition"></div>
+  <div class="box transition"></div>
 </div>

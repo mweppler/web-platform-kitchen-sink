@@ -6,6 +6,48 @@ scripts: true
 styles: true
 title: RWD Basic
 ---
+<style>
+  @media screen and (orientation: portrait) {
+    #left-column {
+      width: 250px;
+    }
+
+    #middle-column {
+      width: 400px;
+    }
+
+    #right-column {
+      width: 250px;
+    }
+
+    .column {
+      float: left;
+      margin: 10px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    #middle-column {
+      float: right;
+      margin-right: 0px;
+    }
+
+    .column {
+      margin-right: 10px;
+    }
+  }
+
+  @media handheld and (max-width: 480px), screen and (max-device-width: 480px), screen and (max-width: 750px) {
+    #right-column, #left-column {
+      display: none;
+    }
+
+    #wrapper, #middle-column {
+      width: inherit;
+    }
+  }
+</style>
+
 <div id="wrapper">
   <h1>Columns</h1>
   <div id="content">

@@ -38,23 +38,6 @@
     padding: 0;
   }
 
-  #left-column {
-    width: 250px;
-  }
-
-  #middle-column {
-    width: 400px;
-  }
-
-  #right-column {
-    width: 250px;
-  }
-
-  .column {
-    float: left;
-    margin: 10px;
-  }
-
   .box {
     background: $white;
     padding: 10px;
@@ -68,15 +51,6 @@
 @media (max-width: 1024px) {
   #wrapper {
     width: 720px;
-  }
-
-  #middle-column {
-    float: right;
-    margin-right: 0px;
-  }
-
-  .column {
-    margin-right: 10px;
   }
 
   h1 {
@@ -96,11 +70,7 @@
        screen and (max-device-width: 480px),
        screen and (max-width: 750px) {
 
-  #right-column, #left-column {
-    display: none;
-  }
-
-  #wrapper, #middle-column {
+  #wrapper {
     width: inherit;
   }
 

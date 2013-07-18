@@ -2,13 +2,58 @@
 layout: default
 meta-description: |
 meta-keywords: |
-scripts: true
+scripts: false
 styles: true
 title: Animations
 ---
+<style>
+  .box-wrapper {
+    -webkit-perspective: 800;
+  }
+
+  .box {
+    background-color: orange;
+    border-radius: 25px;
+    height: 400px;
+    margin: 60px auto;
+    width: 400px;
+  }
+
+  p { color: blue; font-size: .75em; line-height: 1em; padding: 25px; }
+
+  /* webkit keyframes rule */
+  @-webkit-keyframes bounce {
+    0% {
+      -webkit-transform: scale(1.0) rotate(0deg);
+      -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+    }
+    70% {
+      -webkit-transform: scale(1.2) rotate(5deg);
+      -webkit-box-shadow: 20px 20px 80px rgba(0,0,0,0.2);
+    }
+    100% {
+      -webkit-transform: scale(1.2) rotate(-5deg);
+      -webkit-box-shadow: 20px 20px 80px rgba(0,0,0,0.2);
+    }
+  }
+
+  .bounce {
+    /*-webkit-animation-name: bounce;*/
+    /*-webkit-animation-duration: 1s;*/
+    /*-webkit-animation-iteration-count: infinite;*/
+    /*-webkit-animation-direction: alternate;*/
+    /*-webkit-animation-timing-function: ease-in-out;*/
+    /*-webkit-animation-delay: 1s;*/
+    /* name, duration, timing-function, iteration-count, direction, delay */
+    -webkit-animation: bounce 1s ease-in infinite alternate;
+  }
+</style>
+
+<h1>Animations</h1>
 <div id="wrapper">
+  <h2>Bounce</h2>
   <div class="box-wrapper">
-    <div class="box-subject bounce">
+    <div class="box bounce">
       <p>
         Chuck ground round meatball short ribs. Sirloin pork chop short ribs ball tip venison spare ribs sausage, tail pancetta. Venison kielbasa drumstick chuck rump beef ribs, cow biltong. Shankle tongue brisket, filet mignon bacon chuck corned beef prosciutto spare ribs andouille pork cow venison pancetta biltong. Sausage jowl shoulder beef ribs flank biltong shankle tongue swine pork loin. Beef jowl pig ground round corned beef beef ribs pancetta, fatback pork. Shoulder ham hock boudin tri-tip spare ribs tail venison doner.
       </p>

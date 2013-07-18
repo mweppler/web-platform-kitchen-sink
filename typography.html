@@ -6,6 +6,81 @@ scripts: true
 styles: true
 title: Typography
 ---
+<style>
+  h1 {
+    font-size: 3em;
+    text-align: center;
+  }
+
+  h2 {
+    -webkit-column-span: all;
+  }
+
+  img {
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  .shadow-single {
+    /* left/right, top/bottom, blur, hex color */
+    text-shadow: 3px 3px 5px orange;
+  }
+
+  .shadow-double {
+    /* left/right, top/bottom, blur, rgb color alpha */
+    text-shadow: 3px 3px 5px rgba(118, 185, 0, 0.8),
+               -3px -3px 5px rgba(0, 0, 0, 0.8);
+  }
+
+  .shadow-inset {
+    /* inset look */
+    color: $silver;
+    text-shadow: 0 -1px 1px black;
+  }
+
+  .stroke {
+    /* width followed by color */
+    -webkit-text-stroke: 3px orange;
+  }
+
+  .stroke-transparent {
+    /* text fill */
+    -webkit-text-fill-color: transparent;
+  }
+
+  .reflection {
+    /* reflection direction: below, above, left, right */
+    -webkit-box-reflect: below;
+    /* reflection offset [optional]  */
+    -webkit-box-reflect: below -22px;
+  }
+
+  .reflection-gradient {
+    /* reflection image mask [optional] url, image offset, repeat style (round) */
+    -webkit-box-reflect: below -22px -webkit-gradient(
+        linear,
+        left top, left bottom,
+        from(transparent),
+        color-stop(0.2, transparent),
+        to(rgba(255,255,255,0.5))
+      );
+  }
+
+  .reflection-mask {
+    /* reflection image mask [optional] url, image offset, repeat style (round) */
+    -webkit-box-reflect: below -22px url(http://placekitten.com/300/100) 0 round;
+  }
+
+  .clip {
+    overflow: hidden;
+    /* clip, ellipsis */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 400px;
+    word-wrap: break-word;
+  }
+</style>
+
 <div id="wrapper">
   <h1 class="shadow-single">Shadow Single</h1>
   <h1 class="shadow-double">Shadow Double</h1>
