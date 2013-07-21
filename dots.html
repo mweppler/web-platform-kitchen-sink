@@ -1,0 +1,39 @@
+---
+blank-page: true
+layout: default
+meta-description: |
+meta-keywords: |
+qunit-testing: false
+qunit-testing-on: false
+scripts: false
+styles: false
+title: Dots
+---
+<style>
+  html { height: 100%; width: 100% }
+  body { height: 100%; width: 100% }
+  ::selection { background: transparent; }
+  .dot { background: #f00; border: 3px solid #000; border-radius: 40px; display: inline-block; height: 50px; margin: 10px; width: 50px; }
+</style>
+<div id="dot-container"></div>
+<script>
+  var dotContainer = document.querySelector('#dot-container');
+  function dotAction() {
+    var dots = document.querySelectorAll('.dot');
+    if (dots !== undefined) {
+      if (dots.length >= 100) {
+        dotContainer.innerHTML = '';
+        return;
+      }
+    }
+    var dot = document.createElement('span');
+    dot.className = 'dot';
+    dotContainer.appendChild(dot);
+  }
+  document.body.onclick = function() {
+    dotAction();
+  }
+  document.body.ontouch = function() {
+    dotAction();
+  }
+</script>

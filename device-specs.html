@@ -1,7 +1,10 @@
 ---
+blank-page: false
 layout: default
 meta-description: |
 meta-keywords: |
+qunit-testing: false
+qunit-testing-on: false
 scripts: true
 styles: true
 title: Device Specs
@@ -10,11 +13,24 @@ title: Device Specs
 </style>
 
 <div>
+  <dl id="user-agent">
+    <dt>User Agent:</dt>
+  </dl>
+</div>
+
+<div>
   <ul id="spec-list">
   </ul>
 </div>
 
 <script>
+  (function (document, undefined) {
+    var userAgentDefList = document.getElementById('user-agent');
+    var userAgentDef = document.createElement('dd');
+    userAgentDef.appendChild(document.createTextNode(navigator.userAgent));
+    userAgentDefList.appendChild(userAgentDef);
+  })(window.document);
+
   (function (document, undefined) {
     var getDeviceSpecs = function() {
       var specs = {
